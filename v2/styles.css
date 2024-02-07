@@ -1,0 +1,131 @@
+button {
+    /* margin-top: 10px;
+    /* background-color: rgb(157, 193, 51); */
+    /* color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  */
+
+}
+
+#separador {
+    height: 15%;
+    width: 100%;
+}
+
+#fileToUpload {
+    content: "Seleccionar archivo";
+}
+
+body {
+    /* background-color: darkgray; */
+}
+
+#formulario-subidas {
+
+
+    width: 100%;
+    height: 10%;
+    /* border: 2px solid black; */
+    background: rgb(145, 136, 136);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    /* Añadido para centrar verticalmente el contenido */
+    /* padding: 0 20px; */
+    /* box-sizing: border-box; */
+    z-index: 1;
+    justify-content: center;
+}
+
+.fila {
+    display: flex;
+    /* Hace que los elementos hijos estén en línea */
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+#directorio,
+#fichero {
+    flex-grow: 1;
+    padding: 2%;
+    width: 30%;
+    margin: 2.5%;
+    /* Ajusta el espacio entre los productos en porcentaje */
+    border-radius: 10px;
+    /* Ajusta el radio del borde según tus preferencias */
+    /* border: 2px solid #CCCCCC; */
+    /* Color del borde y grosor del borde */
+    /* background-color: white; */
+    position: center;
+    overflow: hidden;
+    /* Añadido para ocultar el contenido que exceda el ancho */
+    justify-content: center;
+    align-items: center;
+}
+
+#directorio-vacio {
+    display: none;
+}
+
+#div-vacio {
+    flex-grow: 1;
+    padding: 2%;
+    width: 30%;
+    margin: 2.5%;
+    /* Ajusta el espacio entre los productos en porcentaje */
+    /* border-radius: 10px; */
+    /* Ajusta el radio del borde según tus preferencias */
+    /* border: 2px solid #CCCCCC; */
+    /* Color del borde y grosor del borde */
+    /* background-color: white; */
+    position: center;
+    overflow: hidden;
+}
+
+
+#directorio:hover {
+    border: 2px solid black;
+}
+
+#fichero:hover {
+    border: 2px solid black;
+}
+
+/* #div-vacio:hover {
+    border: 2px solid black;
+} */
+
+.archivo {
+    height: auto;
+    width: auto;
+    display: block;
+    margin: 5% auto 0;
+}
+
+.directorio {
+    height: 190px;
+    width: 270px;
+    display: block;
+    margin: 5% auto 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    /* border: 1px solid #ddd; */
+    /* Agrega un borde para mejor visualización */
+    /* border-radius: 4px; */
+}
+
+
+/* #navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */

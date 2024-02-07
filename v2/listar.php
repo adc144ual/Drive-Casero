@@ -26,7 +26,7 @@
 function listar_directorio($dir){
     $ficheros = array();
     
-    // Validar y sanitizar la ruta
+    // Validar la ruta
     $dir = realpath($dir);
 
     if ($dir && is_dir($dir)) {
@@ -41,7 +41,7 @@ function listar_directorio($dir){
             closedir($dh);
         }
     } else {
-        // Manejo de errores si la ruta no es válida
+        // Error ruta no válida 
         $ficheros['error'] = 'Ruta no válida';
     }
 
@@ -49,12 +49,12 @@ function listar_directorio($dir){
     echo json_encode($ficheros);
 }
 
-// Verificar si se recibió una solicitud POST y la variable 'ruta' está presente
+// Verificar si se recibió solicitud POST con la ruta
 if (isset($_POST['ruta'])) {
     $ruta = $_POST['ruta'];
     listar_directorio($ruta);
 } else {
-    // Manejo de errores si no se proporciona la variable 'ruta'
+    // Error
     echo json_encode(['error' => 'No se proporcionó la ruta']);
 }
 ?>

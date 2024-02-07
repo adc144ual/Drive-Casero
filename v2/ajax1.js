@@ -19,13 +19,15 @@ function navegar(ruta) {
             data.forEach(function (file) {
 
 
+                if (contador % 5 == 0) {
+                    fila = document.createElement('div');
+                    fila.classList.add('fila');
+                }
+
                 // Crea un nuevo elemento button o p
 
                 if (file.type != "dir") {
-                    if (contador % 5 == 0 || contador == 1) {
-                        fila = document.createElement('div');
-                        fila.classList.add('fila');
-                    }
+
 
                     var fichero = document.createElement('div');
                     fichero.id = 'fichero';
@@ -41,18 +43,14 @@ function navegar(ruta) {
                     contenedor.appendChild(fila);
 
                 } else {
-                    if (contador % 5 == 0 || contador == 1) {
-                        fila = document.createElement('div');
-                        fila.classList.add('fila');
-                    }
+
                     if (file.name == '.') {
                         var vacio = document.createElement('div');
                         vacio.id = 'directorio-vacio';
                         fila.appendChild(vacio);
                         contador--;
                     } else {
-                        fila = document.createElement('div');
-                        fila.classList.add('fila');
+
                         let directorio = document.createElement('div');
                         directorio.id = 'directorio';
 
@@ -62,11 +60,17 @@ function navegar(ruta) {
                         //     navegar(file.location);
                         // }, false);
                         button.onclick = function () { navegar(file.location); };
-                        button.textContent = file.name;
-                        // Añade el botón al div
+                        if (file.name != '..') {
+                            button.textContent = file.name;
+                        }
 
                         let img = document.createElement('img');
-                        img.src = 'dir.png';
+                        if (file.name == '..') {
+                            img.src = 'anterior.png';
+                        } else {
+                            img.src = 'dir.png';
+                        }
+
                         button.appendChild(img);
 
                         directorio.appendChild(button);
